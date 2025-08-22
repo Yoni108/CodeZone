@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Programmers Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-blue-100 min-h-screen flex flex-col">
+    <nav class="w-full bg-white shadow-md py-4 px-6 flex items-center justify-between animate-fade-in-down">
+        <div class="flex items-center gap-2">
+            <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 01-8 0m8 0a4 4 0 01-8 0m8 0v2a4 4 0 01-8 0V7m8 0V5a4 4 0 01-8 0v2"></path>
+            </svg>
+            <span class="font-bold text-blue-700 text-xl tracking-wide">Programmers Community</span>
+        </div>
+        <div class="space-x-6 text-blue-700 font-medium">
+            <a href="home page.html" class="hover:underline transition">Home</a>
+            <a href="#" class="hover:underline transition">Forum</a>
+            <a href="#" class="hover:underline transition">Events</a>
+            <a href="#" class="hover:underline transition">Resources</a>
+            <a href="sign in.html" class="hover:underline transition">Sign In</a>
+        </div>
+    </nav>
+    <main class="flex-1 flex items-center justify-center">
+        <div class="max-w-md w-full mx-auto mt-10 bg-white rounded-xl shadow-2xl p-8 animate-fade-in-up">
+            <h1 class="text-2xl font-bold text-blue-700 mb-6 text-center">Create Your Account</h1>
+            <form id="signup-form" class="space-y-5">
+                <div>
+                    <label for="email" class="block text-blue-700 font-medium mb-1">Email Address</label>
+                    <input type="email" id="email" required placeholder="you@example.com"
+                        class="w-full px-3 py-2 border border-blue-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                </div>
+                <div>
+                    <label for="password" class="block text-blue-700 font-medium mb-1">Password</label>
+                    <input type="password" id="password" required placeholder="Create a password"
+                        class="w-full px-3 py-2 border border-blue-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                </div>
+                <div>
+                    <label for="confirm-password" class="block text-blue-700 font-medium mb-1">Confirm Password</label>
+                    <input type="password" id="confirm-password" required placeholder="Repeat your password"
+                        class="w-full px-3 py-2 border border-blue-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                </div>
+                <button type="submit"
+                    class="w-full py-2 bg-blue-700 text-white font-semibold rounded hover:bg-blue-800 transition animate-fade-in-up">
+                    Sign Up
+                </button>
+                <div id="signup-error" class="text-red-600 text-center text-sm mt-2 hidden"></div>
+                <div id="verification-section" class="mt-4 hidden">
+                    <label for="verification-code" class="block text-blue-700 font-medium mb-1">Enter Verification Code</label>
+                    <input type="text" id="verification-code" placeholder="Check your email for the code"
+                        class="w-full px-3 py-2 border border-blue-200 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition mb-2">
+                    <button type="button" id="verify-btn"
+                        class="w-full py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700 transition">Verify Email</button>
+                    <div id="verification-error" class="text-red-600 text-center text-sm mt-2 hidden"></div>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <span class="text-gray-600">Already have an account?</span>
+                <a href="sign in.html" class="text-blue-700 font-medium hover:underline">Sign In</a>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center text-gray-500 mt-10 mb-4 animate-fade-in-up">&copy; 2025 Programmers Community. All rights reserved.</footer>
+    <style>
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(30px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 1s cubic-bezier(.4,0,.2,1) both;
+        }
+        @keyframes fade-in-down {
+            0% { opacity: 0; transform: translateY(-30px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        .animate-fade-in-down {
+            animation: fade-in-down 1s cubic-bezier(.4,0,.2,1) both;
+        }
+    </style>
+    <script>
+        // Demo registration logic (replace with real backend)
+        document.getElementById('signup-form').onsubmit = function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirm = document.getElementById('confirm-password').value;
+            const errorDiv = document.getElementById('signup-error');
+            const verificationSection = document.getElementById('verification-section');
+            if (!email || !password || !confirm) {
+                errorDiv.textContent = "All fields are required.";
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            if (password !== confirm) {
+                errorDiv.textContent = "Passwords do not match.";
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            errorDiv.classList.add('hidden');
+            // Simulate sending verification code
+            window.verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+            alert('A verification code has been sent to your email: ' + window.verificationCode + ' (demo)');
+            verificationSection.classList.remove('hidden');
+        };
+
+        document.getElementById('verify-btn').onclick = function() {
+            const codeInput = document.getElementById('verification-code').value.trim();
+            const verificationError = document.getElementById('verification-error');
+            if (codeInput === window.verificationCode) {
+                verificationError.classList.add('hidden');
+                alert('Email verified! Registration successful. You can now sign in.');
+                window.location.href = "sign in.html";
+            } else {
+                verificationError.textContent = "Invalid verification code.";
+                verificationError.classList.remove('hidden');
+            }
+        };
+    </script>
+</body>
+</html>
