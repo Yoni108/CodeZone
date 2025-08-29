@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmers Community</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            --header-bg: #222;
+            --header-color: #fff;
+            --container-bg: #fff;
+            --container-shadow: 0 8px 32px rgba(52,152,219,0.13);
+            --nav-bg: #444;
+            --nav-link-bg-hover: #3498db;
+            --nav-link-color: #fff;
+            --main-title: #3498db;
+            --main-text: #217dbb;
+            --font-color: #222;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--font-color);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: var(--header-bg);
+            color: var(--header-color);
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        .mode-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            background: var(--container-bg);
+            color: var(--main-title);
+            border: none;
+            border-radius: 6px;
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            margin: 2rem auto;
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
+        }
+        aside {
+            width: 200px;
+            background: var(--container-bg);
+            padding: 1rem;
+            margin-right: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--container-shadow);
+        }
+        main {
+            flex: 1;
+            background: var(--container-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--container-shadow);
+        }
+        nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            color: var(--nav-link-color);
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.75rem 0;
+            box-shadow: 0 -2px 8px rgba(52,152,219,0.13);
+        }
+        nav a {
+            color: var(--nav-link-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1.2rem;
+            border-radius: 7px;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav a:hover {
+            background: var(--nav-link-bg-hover);
+            color: #fff;
+        }
+        h2 {
+            color: var(--main-title);
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            color: var(--main-text);
+        }
+        .font-bold {
+            font-weight: bold;
+            color: var(--font-color);
+        }
+        /* Dark mode overrides */
+        body.dark-mode {
+            --bg-gradient: linear-gradient(120deg, #232526 0%, #414345 100%);
+            --header-bg: #111;
+            --header-color: #fafafa;
+            --container-bg: #222;
+            --container-shadow: 0 8px 32px rgba(52,152,219,0.25);
+            --nav-bg: #222;
+            --nav-link-bg-hover: #217dbb;
+            --nav-link-color: #fafafa;
+            --main-title: #6dd5ed;
+            --main-text: #81ecec;
+            --font-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Programmers Community</h1>
+        <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+    </header>
+    <div class="container">
+        <aside>
+            <!-- You can add sidebar content here -->
+        </aside>
+        <main>
+            <h2>Welcome to the Programmers Community!</h2>
+            <p>
+                Connect, share, and learn with fellow programmers. Join discussions, ask questions, and explore resources to grow your skills.
+            </p>
+            <p class="font-bold">
+                <strong>Latest Announcement:</strong> Community meetup scheduled for next month. Stay tuned for details!
+            </p>
+        </main>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Chat</a>
+        <a href="#">Midea</a>
+        <a href="#">Profile</a>
+    </nav>
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.querySelector('.mode-toggle');
+            if(document.body.classList.contains('dark-mode')) {
+                btn.textContent = '☀️ Light Mode';
+            } else {
+                btn.textContent = '🌙 Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
