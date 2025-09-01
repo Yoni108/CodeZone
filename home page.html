@@ -2,85 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Alex | AleTube1st YouTube Channel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programmers Community</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-br from-[#E3F0FF] via-[#F8FBFF] to-[#C7E6FF] min-h-screen flex flex-col">
-    <nav class="w-full bg-white shadow-lg py-4 px-8 flex items-center justify-between animate-fade-in-down">
-        <div class="flex items-center gap-3">
-            <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/meeting-1969820_1280.png" alt="Logo" class="w-10 h-10 rounded-full border-2 border-blue-300 shadow">
-            <span class="font-extrabold text-blue-700 text-2xl tracking-wide drop-shadow">Programmers Community</span>
-        </div>
-        <div class="space-x-8 text-blue-700 font-semibold text-lg">
-            <a href="#" class="hover:underline transition">Home</a>
-            <a href="#" class="hover:underline transition">Forum</a>
-            <a href="#" class="hover:underline transition">Events</a>
-            <a href="#" class="hover:underline transition">Resources</a>
-            <a href="sign in.html" class="hover:underline transition">Sign In</a>
-        </div>
-    </nav>
-    <main class="flex-1 flex flex-col items-center justify-center px-4">
-        <div class="max-w-4xl w-full mx-auto mt-12 bg-white rounded-3xl shadow-2xl p-12 animate-fade-in-up">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="flex-1">
-                    <h1 class="text-6xl font-extrabold text-blue-700 mb-6 text-left animate-bounce drop-shadow-lg">
-                        Welcome to <span class="text-[#3B82F6]">Programmers Community</span>
-                    </h1>
-                    <p class="text-gray-700 mb-8 text-xl font-medium">
-                        Connect, learn, and grow with fellow programmers.<br>
-                        Share your knowledge, ask questions, join events, and access valuable resources for your coding journey.
-                    </p>
-                    <div class="flex gap-6 mt-8">
-                        <a href="sign up.html" class="px-8 py-4 bg-[#3B82F6] text-white font-bold rounded-xl shadow-lg hover:bg-blue-800 transition animate-fade-in-up text-lg">Join Now</a>
-                        <a href="sign in.html" class="px-8 py-4 bg-white border-2 border-[#3B82F6] text-[#3B82F6] font-bold rounded-xl shadow-lg hover:bg-blue-50 transition animate-fade-in-up text-lg">Sign In</a>
-                    </div>
-                </div>
-                <div class="flex-1 flex justify-center">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/meeting-1969820_1280.png" alt="Community" class="w-[350px] h-[350px] object-cover rounded-2xl shadow-xl border-4 border-blue-100 animate-fade-in-up">
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                <a href="#" class="bg-[#E3F0FF] border border-blue-200 rounded-2xl p-8 text-center hover:bg-blue-100 transition shadow-lg hover:scale-105 duration-300 animate-fade-in-up">
-                    <h2 class="font-bold text-blue-700 mb-3 text-xl">Join the Forum</h2>
-                    <p class="text-gray-600 text-base">Discuss programming topics, ask questions, and help others.</p>
-                </a>
-                <a href="#" class="bg-[#E3F0FF] border border-blue-200 rounded-2xl p-8 text-center hover:bg-blue-100 transition shadow-lg hover:scale-105 duration-300 animate-fade-in-up">
-                    <h2 class="font-bold text-blue-700 mb-3 text-xl">Upcoming Events</h2>
-                    <p class="text-gray-600 text-base">Participate in hackathons, webinars, and meetups.</p>
-                </a>
-                <a href="#" class="bg-[#E3F0FF] border border-blue-200 rounded-2xl p-8 text-center hover:bg-blue-100 transition shadow-lg hover:scale-105 duration-300 animate-fade-in-up">
-                    <h2 class="font-bold text-blue-700 mb-3 text-xl">Resources</h2>
-                    <p class="text-gray-600 text-base">Access tutorials, guides, and open-source projects.</p>
-                </a>
-            </div>
-        </div>
-    </main>
-    <footer class="text-center text-gray-500 mt-12 mb-6 animate-fade-in-up text-lg">
-        &copy; 2025 Programmers Community. All rights reserved.
-    </footer>
     <style>
-        @keyframes fade-in-up {
-            0% { opacity: 0; transform: translateY(30px);}
-            100% { opacity: 1; transform: translateY(0);}
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0202 100%);
         }
-        .animate-fade-in-up {
-            animation: fade-in-up 1s cubic-bezier(.4,0,.2,1) both;
+        .adem-glow {
+            text-shadow: 0 0 8px #ff2d2d, 0 0 16px #ff2d2d;
         }
-        @keyframes fade-in-down {
-            0% { opacity: 0; transform: translateY(-30px);}
-            100% { opacity: 1; transform: translateY(0);}
+        .adem-card {
+            box-shadow: 0 0 16px #ff2d2d55;
+            border: 1.5px solid #ff2d2d;
         }
-        .animate-fade-in-down {
-            animation: fade-in-down 1s cubic-bezier(.4,0,.2,1) both;
+        .adem-btn {
+            box-shadow: 0 0 8px #ff2d2d;
+            border: 1.5px solid #ff2d2d;
         }
-        .animate-bounce {
-            animation: bounce 1.2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0);}
-            50% { transform: translateY(-16px);}
+        .modal-bg {
+            background: rgba(30, 0, 0, 0.85);
         }
     </style>
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+    <header class="bg-gradient-to-r from-red-900 via-red-700 to-gray-900 p-6 flex items-center justify-between">
+        <h1 class="text-3xl font-bold adem-glow">Alex - AleTube1st</h1>
+        <div class="flex gap-4">
+            <a href="https://www.youtube.com/@AleTube1st" target="_blank" class="adem-btn bg-black text-red-400 px-4 py-2 rounded shadow hover:bg-red-900 font-semibold transition adem-glow">Visit YouTube Channel</a>
+            <button id="signinBtn" class="adem-btn bg-black text-red-400 px-4 py-2 rounded shadow hover:bg-red-900 font-semibold transition adem-glow">Sign In</button>
+        </div>
+    </header>
+    <!-- Sign In Modal -->
+    <div id="modal" class="fixed inset-0 flex items-center justify-center z-50 hidden modal-bg">
+        <div class="bg-gray-900 rounded-lg p-8 adem-card w-full max-w-xs relative">
+            <button id="closeModal" class="absolute top-2 right-2 text-red-400 text-xl font-bold">&times;</button>
+            <h2 class="text-xl font-bold adem-glow mb-4 text-center">Sign In</h2>
+            <form id="signinForm" class="flex flex-col gap-4">
+                <input type="text" id="username" placeholder="Username" class="bg-gray-800 text-white px-3 py-2 rounded adem-card" autocomplete="username" required>
+                <input type="password" id="password" placeholder="Password" class="bg-gray-800 text-white px-3 py-2 rounded adem-card" autocomplete="current-password" required>
+                <button type="submit" class="adem-btn bg-black text-red-400 px-4 py-2 rounded font-semibold transition adem-glow">Sign In</button>
+                <div id="signinMsg" class="text-center mt-2 text-red-400 adem-glow text-sm"></div>
+            </form>
+        </div>
+    </div>
+    <main class="max-w-5xl mx-auto py-10">
+        <h2 class="text-2xl font-semibold mb-6 adem-glow">Latest Videos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Video Card 1 -->
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" class="block bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition adem-card">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="Video Title 1" class="w-full h-48 object-cover border-b-2 border-red-700">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold mb-2 adem-glow">Video Title 1</h3>
+                    <p class="text-red-300">Short description of the video.</p>
+                </div>
+            </a>
+            <!-- Video Card 2 -->
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" class="block bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition adem-card">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="Video Title 2" class="w-full h-48 object-cover border-b-2 border-red-700">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold mb-2 adem-glow">Video Title 2</h3>
+                    <p class="text-red-300">Short description of the video.</p>
+                </div>
+            </a>
+            <!-- Video Card 3 -->
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank" class="block bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition adem-card">
+                <img src="https://img.youtube.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="Video Title 3" class="w-full h-48 object-cover border-b-2 border-red-700">
+                <div class="p-4">
+                    <h3 class="text-lg font-bold mb-2 adem-glow">Video Title 3</h3>
+                    <p class="text-red-300">Short description of the video.</p>
+                </div>
+            </a>
+            <!-- Add more video cards as needed -->
+        </div>
+    </main>
+    <footer class="text-center py-6 bg-gray-900 text-red-400 adem-glow">
+        &copy; 2025 Alex | AleTube1st. All rights reserved.
+    </footer>
+    <script>
+        // Show modal
+        document.getElementById('signinBtn').onclick = function() {
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('signinMsg').textContent = '';
+        };
+        // Hide modal
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('modal').classList.add('hidden');
+        };
+        // Handle sign in
+        document.getElementById('signinForm').onsubmit = function(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const msg = document.getElementById('signinMsg');
+            if (user === 'alexbrown' && pass === 'alexis@33#') {
+                msg.textContent = 'Sign in successful!';
+                msg.classList.add('text-green-400');
+                setTimeout(() => {
+                    document.getElementById('modal').classList.add('hidden');
+                }, 1200);
+            } else {
+                msg.textContent = 'Invalid username or password.';
+                msg.classList.remove('text-green-400');
+            }
+        };
+    </script>
 </body>
 </html>
